@@ -1,10 +1,30 @@
 require 'rubygems'
 require 'sinatra'
+require 'sqlite3'
 #require 'sinatra/reloader'
 
-configure do
-  enable :sessions
+# configure do
+#   enable :sessions
+# end
+def get_db
+  return SQLite3::Database.new 'barbershop.db'
 end
+
+configure do
+  db = get_db
+  db.execute 'CREATE TABLE IF NOT EXISTS
+  "Users" 
+  (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT, 
+    "username" TEXT, 
+    "phone" TEXT, 
+    "datestemp" TEXT, 
+    "barber" TEXT, 
+    "color" TEXT
+  )'
+end
+
+
 
 helpers do
   def username
@@ -73,7 +93,20 @@ post '/visit' do
           return erb :visit
         end
   end
+db = get_db
+db.execute 'insert into
+Users 
+(
+  username,
+  phone,
+  datestemp,
+  barber,
+  color
+)
+values (?, ?, ?, ?, ?)' , [@username, @phone, @datetime, @barber, @color]
+
 
   erb "OK, username is #{@username} date is ,#{@datetime} , 
   phone is #{@phone} , your barber #{@barber} , your color: #{@color}"
 end
+
