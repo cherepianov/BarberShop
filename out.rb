@@ -1,0 +1,5 @@
+puts "sqlite>"
+puts "Traceback (most recent call last):"
+puts "3: ты долбоеб"
+puts "2: тут ничего само не сохраняется"
+puts "1: from /home/alex/.rbenv/versions/2.6.5/blablablablablablbalbalbal ты все равно там нихуя не поймешь, иди нахуй"
