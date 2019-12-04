@@ -1,14 +1,15 @@
-<!--<h1>Не забудь, сынок!</h1>
-<p><h3>...о самом важном в твоей бесполезной жизни</h3><br> </p>
+<!--<h1>Сайт обычный</h1>
+
 -->
 <h1>Запись</h1>
-<h3>н приём</h3>
+<h3>на приём</h3>
 
 <script type="text/javascript"> 
 $(function(){
-$('#aaa').css('backgroung-color','yellow');
-$('#bbb').css('backgroung-color','blue');
+//$('#aaa').css('backgroung-color','yellow');
+//$('#bbb').css('backgroung-color','blue');
 $('#color').simplecolorpicker();
+jQuery('#datetimepicker').datetimepicker();
 });
 </script>
 
@@ -27,7 +28,7 @@ $('#color').simplecolorpicker();
 
 <div class="form-group"> 
 <label>Когда вас ждать?</label>
-<input id="bbb" name="datetime" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @datetime %>">
+<input id="datetimepicker" name="datetime" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @datetime %>">
 </div>
 
 

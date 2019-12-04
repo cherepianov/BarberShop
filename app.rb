@@ -7,7 +7,11 @@ require 'sqlite3'
 #   enable :sessions
 # end
 def get_db
-  return SQLite3::Database.new 'barbershop.db'
+   SQLite3::Database.new 'barbershop.db'
+end
+
+get '/showusers' do
+  "Hello World"
 end
 
 configure do
@@ -79,19 +83,19 @@ post '/visit' do
   @color = params[:color]
 
 #для каждой пары ключ-значение
-  hh = {:username => 'введите имя', 
+  hh = {:username => 'введите имя',
         :phone => "введите телефон", 
         :datetime => "введите дату и время"}
         #если параметр пуст
-        hh.each do |key, value|
-          if params[key] == ""
+  hh.each do |key, value|
+    if params[key] == ""
           #переменной error присовить value из хэша hh
           #а value из хэша hh это сообщение об ошибке
           #т.е. переменной error присовить сообщение об ошибке
           @error = hh[key]
           #вернуть представление visit
           return erb :visit
-        end
+    end
   end
 db = get_db
 db.execute 'insert into
