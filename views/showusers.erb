@@ -1,0 +1,26 @@
+<table cellpadding="2" cellspacing="2" border="2">
+  <tr>
+  <td>id</td>
+  <td>username</td>
+  <td>phone</td>
+  <td>datestemp</td>
+  <td>barber</td>
+  <td>color</td>
+    <td></td>
+  </tr>
+<% for item in @arr %>
+  <tr style="background: <%= item[:color] %>">
+    <td><%= item[:id] %></td>
+    <td><%= item[:username] %></td>
+    <td><%= item[:phone] %></td>
+    <td><%= item[:datestemp] %></td>
+    <td><%= item[:barber] %></td>
+    <td><%= item[:color] %></td>
+    <td><%= item %></td>
+  </tr>
+<% end %>
+</table>
+
+<% for i in @foo %>
+  <%= i[:bar] %>,
+<% end %>
