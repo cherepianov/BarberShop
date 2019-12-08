@@ -16,7 +16,7 @@ end
 get '/showusers' do
 
   @arr = []
-  get_db.execute 'select * from Users' do |row|
+  get_db.execute 'select * from Users order by id desc' do |row|
     @arr.push({
                   :id => row['id'],
                   :username => row['username'],

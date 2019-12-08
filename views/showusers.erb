@@ -8,17 +8,17 @@
   <td>color</td>
     <td></td>
   </tr>
-<% for item in @arr %>
-  <tr style="background: <%= item[:color] %>">
-    <td><%= item[:id] %></td>
-    <td><%= item[:username] %></td>
-    <td><%= item[:phone] %></td>
-    <td><%= item[:datestemp] %></td>
-    <td><%= item[:barber] %></td>
-    <td><%= item[:color] %></td>
-    <td><%= item %></td>
+<% @arr.each { |item| %>
+  <tr style="background: <%=  item[:color]  %>">
+    <td><%=  item[:id]  %></td> <%# "=" выводит на экран%>
+    <td><%=  item[:username]  %></td>
+    <td><%=  item[:phone]  %></td>
+    <td><%=  item[:datestemp]  %></td>
+    <td><%=  item[:barber]  %></td>
+    <td><%=  item[:color]  %></td>
+    <td><%=  item  %></td>
   </tr>
-<% end %>
+<%  } %>
 </table>
 
 <% for i in @foo %>
